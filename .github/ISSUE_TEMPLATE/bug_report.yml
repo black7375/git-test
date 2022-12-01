@@ -36,6 +36,25 @@ body:
     validations:
       required: true
 
+  - type: checkboxes
+    attributes:
+      label: "Distribution"
+      options:
+        - label:  "[Original Lepton](https://github.com/black7375/Firefox-UI-Fix)"
+        - label: "[Lepton's photon style](https://github.com/black7375/Firefox-UI-Fix/tree/photon-style)"
+        - label: "[Lepton's proton style](https://github.com/black7375/Firefox-UI-Fix/tree/proton-style)"
+
+  - type: dropdown
+    attributes:
+      label: "OS"
+      options:
+        - Linux
+        - Mac OS
+        - Windows 10
+        - Windows 8
+        - Windows 7
+      multiple: true
+
   - type: textarea
     id: user-js-setup
     attributes:
