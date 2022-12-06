@@ -2,4 +2,5 @@
 
 Just git, github feature test.
 
-[git-branchless](https://github.com/arxanas/git-branchless/wiki/Tutorial) test
+- [Issue Template](/.github/ISSUE_TEMPLATE)
+- [git-branchless](https://github.com/arxanas/git-branchless/wiki/Tutorial) test
