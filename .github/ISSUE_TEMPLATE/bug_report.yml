@@ -3,6 +3,10 @@ description: Create a report to help us improve
 labels: ["bug"]
 
 body:
+# == Bug Infos =================================================================
+  - type: markdown
+    attributes:
+      value: "## Bug Infos"
   - type: textarea
     id: describe-the-bug
     attributes:
@@ -17,6 +21,8 @@ body:
       label: Expected behavior
       description: A clear and concise description of what you expected to happen.
       placeholder: Tell us what you want!
+    validations:
+      required: false
 
   - type: textarea
     id: screenshots
@@ -27,41 +33,95 @@ body:
     validations:
       required: false
 
+# == Environments ===============================================================
+  - type: markdown
+    attributes:
+      value: "## Environments"
+
+  - type: dropdown
+    attributes:
+      label: OS
+      options:
+        - Linux
+        - Mac OS
+        - Windows 11
+        - Windows 10
+        - Windows 8
+        - Windows 7
+        - Others
+      multiple: true
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: OS - Others
+      description: Enter only if you choose `Others` from the OS
+      placeholder: e.g. FreeBSD
+    validations:
+      required: false
+
   - type: input
     id: firefox-version
     attributes:
       label: Firefox Version
       description: Write from `about:support` - `version`
-      placeholder: Ex. v101.1b3
+      placeholder: e.g. v101.1b3
     validations:
       required: true
 
   - type: checkboxes
     attributes:
-      label: "Distribution"
+      label: Distribution
       options:
-        - label:  "[Original Lepton](https://github.com/black7375/Firefox-UI-Fix)"
+        - label: "[Original Lepton](https://github.com/black7375/Firefox-UI-Fix)"
         - label: "[Lepton's photon style](https://github.com/black7375/Firefox-UI-Fix/tree/photon-style)"
         - label: "[Lepton's proton style](https://github.com/black7375/Firefox-UI-Fix/tree/proton-style)"
+    validations:
+      required: true
 
-  - type: dropdown
+  - type: checkboxes
     attributes:
-      label: "OS"
+      label: Theme
       options:
-        - Linux
-        - Mac OS
-        - Windows 10
-        - Windows 8
-        - Windows 7
-      multiple: true
+        - label: "Light"
+        - label: "Dark"
+        - label: "Alpenglow (System: Light)"
+        - label: "Alpenglow (System: Dark)"
+        - label: "System Default"
+        - label: "Others: (e.g. [Photon Colors](https://addons.mozilla.org/en-US/firefox/addon/photon-colors/), [Google Chrome Dark](https://addons.mozilla.org/en-US/firefox/addon/google-chrome-dark/), [Fairytale Of Nature](https://addons.mozilla.org/en-US/firefox/addon/fairytale-of-nature/))"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Theme - More Info
+      description: |
+        Enter only for the following cases:
+
+        - Choose `System Default` with linux users
+          Tip: Run `gsettings get org.gnome.desktop.interface gtk-theme` to output this
+        - Choose `Others`
+      placeholder: |
+        Example for each case
+
+        - Adwaita, Adwaita-Dark, Breath, Breath-Dark
+        - Your theme links like https://addons.mozilla.org/en-US/firefox/addon/photon-colors/
+    validations:
+      required: false
 
   - type: textarea
     id: user-js-setup
     attributes:
       label: "`user.js` setup"
-      description: Add any other context about the problem here.
-      placeholder: Your `user.js` or `about:config` settings
-      render: javascript
+      description: |
+        Your `user.js` or `about:config` settings
+      placeholder: Please tell me your settings
+      value: |
+        <details><summary><strong><code>user.js</code> setup</strong></summary><br>
+
+        ```javascript
+        // Your settings
+        ```
+        </details>
     validations:
       required: true
 
