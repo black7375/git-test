@@ -21,6 +21,7 @@ body:
         - label: "iOS"
         - label: "Web"
         - label: "Etc."
+      multiple: true
     validations:
       required: true
   - type: dropdown
@@ -33,6 +34,7 @@ body:
         - label: "Network Error"
         - label: "Structure Error"
         - label: "Etc."
+      multiple: true
     validations:
       required: true
   - type: input
