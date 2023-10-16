@@ -17,10 +17,10 @@ body:
       label: Environment
       description: Select the environment in which the bug occurs.
       options:
-        - label: "Android"
-        - label: "iOS"
-        - label: "Web"
-        - label: "Etc."
+        - "Android"
+        - "iOS"
+        - "Web"
+        - "Etc."
       multiple: true
     validations:
       required: true
@@ -30,10 +30,10 @@ body:
       label: Bug category
       description: Select what bug category is.
       options:
-        - label: "Code Error"
-        - label: "Network Error"
-        - label: "Structure Error"
-        - label: "Etc."
+        - "Code Error"
+        - "Network Error"
+        - "Structure Error"
+        - "Etc."
       multiple: true
     validations:
       required: true
